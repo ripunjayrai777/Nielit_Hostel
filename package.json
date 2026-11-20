@@ -1,0 +1,8 @@
+{
+  "name": "nielit-hostel-portal",
+  "version": "6.0.0",
+  "private": true,
+  "scripts": { "start": "node api/index.js", "test": "node tests/run.js" },
+  "engines": { "node": "26.x" },
+  "dependencies": { "express": "^4.19.2", "mongodb": "^6.9.0" }
+}

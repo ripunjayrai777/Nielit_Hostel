@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NIELIT Boys Hostel – Warden Portal</title><meta name="theme-color" content="#0f3d3e">
+<link rel="icon" href="/assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/components.css">
+<link rel="stylesheet" href="/css/layout.css">
+<link rel="stylesheet" href="/css/features/attendance.css">
+<link rel="stylesheet" href="/css/features/sheet.css">
+<link rel="stylesheet" href="/css/features/dashboard.css">
+<link rel="stylesheet" href="/css/features/complaints.css">
+<link rel="stylesheet" href="/css/features/exits.css">
+<link rel="stylesheet" href="/css/features/fees.css">
+<link rel="stylesheet" href="/css/features/hostel.css">
+<link rel="stylesheet" href="/css/features/camera.css">
+<link rel="stylesheet" href="/css/features/accounts.css">
+<link rel="stylesheet" href="/css/features/resident.css">
+<link rel="stylesheet" href="/css/features/gate.css">
+</head><body>
+
+<!-- Sign-in page -->
+<div id="login" class="official hide">
+  <div class="lg-l"><div class="lg-top"><span class="bl big"><img src="/assets/logo.png" alt="NIELIT logo" onerror="this.parentNode.classList.add('mono');this.replaceWith('N')"></span><div><div class="lg-org">National Institute of Electronics &amp; Information Technology</div><div class="lg-sub">Gorakhpur Campus</div></div></div>
+    <div class="lg-mid"><h1>Boys Hostel<br>Warden Portal</h1><p>Attendance, leave, complaints and fee records of hostel residents, in one place.</p></div>
+    <div class="lg-bot">Ministry of Electronics &amp; Information Technology, Government of India</div></div>
+  <div class="lg-r">
+    <form id="loginForm" class="lg-form" onsubmit="login();return false"><h2>Sign in</h2><p>Choose how you use the portal.</p>
+      <div class="rolepick" id="rolepick"><button type="button" data-role="resident" class="on" onclick="pickRole('resident')">Resident</button><button type="button" data-role="guard" onclick="pickRole('guard')">Guard</button><button type="button" data-role="warden" onclick="pickRole('warden')">Warden</button></div>
+      <div id="idRow"><label for="uid" id="idLabel">NDU Roll Number</label><input id="uid" autocomplete="username" autocapitalize="characters" placeholder="e.g. NDU202500285"></div>
+      <label for="pw">Password</label>
+      <div class="pwrap"><input id="pw" type="password" autocomplete="current-password" placeholder="Enter your password"><button type="button" class="eye" aria-label="Show password" onclick="const p=$('#pw'),s=p.type==='password';p.type=s?'text':'password';this.textContent=s?'Hide':'Show'">Show</button></div>
+      <button class="btn" type="submit">Sign in</button>
+      <p class="fine" id="regLink">New here? <a href="#" onclick="showRegister();return false">Create an account</a> (needs a live photo of your ID card)</p></form>
+    <form id="regForm" class="lg-form hide" onsubmit="register();return false"><h2 id="regTitle">Create account</h2><p>Your account works after the warden approves your ID card.</p>
+      <div id="regName" class="hide"><label for="rn">Full name</label><input id="rn" autocomplete="name"></div>
+      <div id="regMobile" class="hide"><label for="rm">Mobile number</label><input id="rm" inputmode="tel"></div>
+      <label for="rid" id="regIdLabel">NDU Roll Number</label><input id="rid" autocapitalize="characters">
+      <label for="rpw">Choose a password (6 or more characters)</label><input id="rpw" type="password" autocomplete="new-password">
+      <label>ID card photo (live camera only)</label><div id="idCap" style="margin-bottom:14px"></div>
+      <button class="btn" type="submit">Submit for approval</button><p class="fine"><a href="#" onclick="showLoginForm();return false">Back to sign in</a></p></form>
+  </div>
+</div>
+
+<!-- The app (shown after sign-in) -->
+<div id="app" class="hide">
+  <header><div class="brand"><span class="bl sm"><img src="/assets/logo.png" alt="NIELIT logo" onerror="this.parentNode.classList.add('mono');this.replaceWith('N')"></span><div><h1>NIELIT Gorakhpur</h1><small>Boys Hostel, warden portal</small></div></div>
+    <div style="display:flex;align-items:center"><span id="who" class="who"></span><button class="btn ghost sm" style="color:#fff;border-color:#ffffff55" onclick="logout()">Log out</button></div></header>
+  <main id="main"></main>
+  <nav id="nav"></nav>
+  <footer class="ft">NIELIT Gorakhpur Campus, Boys Hostel. For authorised hostel staff only.</footer>
+  <div id="toast" class="toast"></div>
+</div>
+
+<!-- Live camera overlay (used by core/camera.js) -->
+<div id="cam" class="hide"><video id="cv" autoplay playsinline muted></video><img id="cp" class="hide" alt="Captured photo"><div class="cbar" id="cb1"><button type="button" class="btn ghost" id="cx">Cancel</button><button type="button" class="shutter" id="cs" aria-label="Capture photo"></button><button type="button" class="btn ghost" id="cf">Flip</button></div><div class="cbar hide" id="cb2"><button type="button" class="btn ghost" id="cr">Retake</button><button type="button" class="btn" id="cu">Use photo</button></div></div>
+
+<script src="/js/core/state.js"></script>
+<script src="/js/core/utils.js"></script>
+<script src="/js/core/ui.js"></script>
+<script src="/js/core/api.js"></script>
+<script src="/js/core/auth.js"></script>
+<script src="/js/core/router.js"></script>
+<script src="/js/core/camera.js"></script>
+<script src="/js/features/dashboard.js"></script>
+<script src="/js/features/attendance.js"></script>
+<script src="/js/features/sheet.js"></script>
+<script src="/js/features/leave.js"></script>
+<script src="/js/features/exits.js"></script>
+<script src="/js/features/accounts.js"></script>
+<script src="/js/features/data.js"></script>
+<script src="/js/features/resident.js"></script>
+<script src="/js/features/gate.js"></script>
+<script src="/js/features/students.js"></script>
+<script src="/js/features/complaints.js"></script>
+<script src="/js/features/fees.js"></script>
+<script src="/js/features/hostel.js"></script>
+<script src="/js/main.js"></script>
+</body></html>

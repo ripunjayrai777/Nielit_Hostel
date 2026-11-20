@@ -1,0 +1,6 @@
+/* Guard: gate view */
+.gsearch{width:100%;min-height:50px;font-size:17px}
+.gcard{display:flex;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid var(--bd)}.gcard:last-child{border:0}
+.gcard img,.gcard .avt{width:64px;height:64px;border-radius:12px;object-fit:cover;flex:none;background:var(--sel);display:grid;place-items:center;font:800 20px 'Bricolage Grotesque',sans-serif;color:var(--lk)}
+.gcard .gi{flex:1;min-width:0}.gcard .gi b{display:block;font-size:16px}.gcard .gi span{color:var(--mu);font-size:13.5px;display:block}
+.gban{display:inline-block;margin-top:6px;padding:5px 12px;border-radius:8px;font-weight:800;font-size:13.5px}.gban.ok{background:var(--okb);color:var(--ok)}.gban.no{background:var(--nob);color:var(--no)}.gban.wa{background:var(--wab);color:var(--wa)}

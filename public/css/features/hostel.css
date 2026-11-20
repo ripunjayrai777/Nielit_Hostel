@@ -1,0 +1,14 @@
+/* Hostel tab */
+.ah{position:relative;border-radius:var(--r);overflow:hidden;min-height:190px;margin-bottom:14px;background:linear-gradient(135deg,var(--ink),#1f6f6f);color:#fff;display:flex;align-items:flex-end}
+.ah img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.ah::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#000a 0,#0000 65%)}
+.ahc{position:relative;z-index:1;padding:18px}.ahc h2{margin:0;font:800 clamp(24px,4vw,34px)/1.1 'Bricolage Grotesque',sans-serif}.ahc p{margin:4px 0 0;opacity:.9}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}.tile{background:var(--sel);border-radius:10px;padding:12px}
+.tile b{display:block;font:800 26px/1.1 'Bricolage Grotesque',sans-serif}.tile span{font-size:13px;color:var(--mu)}
+.mnu{width:100%;border-radius:10px;border:1px solid var(--bd);display:block}.abtn{display:inline-flex;align-items:center;text-decoration:none;min-height:38px;padding:0 14px;border-radius:9px;font-weight:700;font-size:14px}
+.sopl{margin:12px 0 0;padding-left:18px;line-height:1.6;font-size:14px}.abtn.p{background:var(--pr);color:#fff}.abtn.g{border:1px solid var(--bd);color:var(--lk)}.acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.pcard{display:flex;gap:16px;align-items:flex-start}.pcard .pt{flex:1;min-width:0}
+.pimg,.avt{flex:none;width:112px;aspect-ratio:3/4;border-radius:12px;object-fit:cover;border:1px solid var(--bd);background:var(--sel)}.pimg.lg,.avt.lg{width:136px}
+.avt{display:grid;place-items:center;color:var(--lk);font:800 28px 'Bricolage Grotesque',sans-serif}
+.pname{font:700 16px 'Bricolage Grotesque',sans-serif}.prole{color:var(--mu);font-size:13.5px}.pg{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.msg{margin:0;line-height:1.65;border-left:3px solid var(--lk);padding-left:12px}
+@media(max-width:420px){.pimg,.avt{width:92px}.pimg.lg,.avt.lg{width:104px}.pcard{gap:12px}}

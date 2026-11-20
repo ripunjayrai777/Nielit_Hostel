@@ -1,0 +1,13 @@
+/* Shared components: expandable record cards (complaints, left students), sub-tabs, form labels */
+.cth{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:10px}.cth b{font:700 16px 'Bricolage Grotesque',sans-serif}.cth span{font-size:12.5px;color:var(--mu)}
+.cmp{border-bottom:1px solid var(--bd)}.cmp:last-child{border:0}
+.cmp summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:auto 1fr auto;gap:4px 12px;align-items:center;padding:12px 2px}.cmp summary::-webkit-details-marker{display:none}
+.cno{font:700 12.5px 'Bricolage Grotesque',sans-serif;background:var(--sel);padding:4px 9px;border-radius:8px;white-space:nowrap}
+.cin{min-width:0}.cin b{display:block;font-size:14.5px}.cin small{display:block;color:var(--mu);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cbody{padding:4px 2px 16px;display:grid;gap:14px}.cbody h4{margin:0 0 6px;font-size:12.5px;color:var(--mu);font-weight:700}.cbody p{margin:0;white-space:pre-wrap}
+.cimg{max-width:min(100%,320px);border-radius:10px;border:1px solid var(--bd);display:block}.res{border:1px solid var(--bd);border-radius:10px;padding:12px;background:var(--sel)}
+@media(max-width:560px){.cmp summary{grid-template-columns:1fr auto}.cmp .cin{grid-column:1/-1;order:3}}
+.subtabs{display:inline-flex;border:1px solid var(--bd);border-radius:10px;overflow:hidden;margin-bottom:14px;background:var(--card)}.subtabs button{border:0;background:none;color:var(--mu);padding:9px 16px;font-weight:700}.subtabs button+button{border-left:1px solid var(--bd)}.subtabs .on{background:var(--sel);color:var(--lk)}
+.fl{display:flex;flex-direction:column;gap:4px;font-size:12.5px;font-weight:700;color:var(--mu)}.fl input,.fl select{font-weight:400;color:var(--tx)}.row>.fl{flex:1;min-width:140px}
+.chk{display:flex;flex-wrap:wrap;gap:8px 18px;margin:6px 0 12px}.chk label{display:flex;align-items:center;gap:7px;font-size:14px}.chk input{min-height:0;width:18px;height:18px}
+.rt{width:100%;margin:8px 0}.rt td{padding:5px 0;border:0}.rt td:last-child{text-align:right;font-weight:700}.rt tr.tot td{border-top:1px solid var(--bd);padding-top:8px;font-size:16px}

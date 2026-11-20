@@ -1,0 +1,4 @@
+/* Sheet */
+.grid td:nth-child(n+3),.grid th:nth-child(n+3){text-align:center;padding:8px 5px;min-width:30px}
+.grid td:nth-child(-n+2),.grid th:nth-child(-n+2){position:sticky;left:0;background:var(--card);z-index:1}.grid th:nth-child(-n+2){z-index:3}.grid td:nth-child(1),.grid th:nth-child(1){min-width:62px}.grid td:nth-child(2),.grid th:nth-child(2){left:62px;box-shadow:2px 0 0 var(--bd)}
+.cL{background:var(--wab);color:var(--wa);font-weight:700}.cA{background:var(--nob);color:var(--no);font-weight:700}.red{color:var(--no);font-weight:700}

@@ -1,0 +1,6 @@
+// Icons for the navigation and the toast message
+const ICON={dash:'<path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',att:'<circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/>',sheet:'<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',leave:'<path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>',stu:'<circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-4 3-6 7-6s7 2 7 6"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14c2.5.7 4 2.5 4 6"/>',comp:'<path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.5"/>',fee:'<path d="M7 4h11M7 9h11M7 4c6 0 8 2 8 5s-2 5-8 5l7 6"/>'};
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(window.TT);window.TT=setTimeout(()=>t.classList.remove('show'),1800)}
+const ICONS_EXTRA = { accounts: '<circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-4 3-6 7-6s7 2 7 6"/><path d="M16 11l2 2 4-4"/>', data: '<path d="M12 3v12M7 10l5 5 5-5M4 20h16"/>', gate: '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>', about: '<path d="M4 21V5l8-2 8 2v16"/><path d="M9 21v-5h6v5M8 9h2M14 9h2M8 13h2M14 13h2"/>' };
+Object.assign(ICON, ICONS_EXTRA);
+ICON.myhome = ICON.dash; ICON.myleave = ICON.leave; ICON.mycomp = ICON.comp;

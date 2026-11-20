@@ -1,0 +1,7 @@
+// Sheet: month grid built from leave records and absent marks (blank = Present).
+V.sheet = async function(){const mo=window.MO||today().slice(0,7),[y,m]=mo.split('-').map(Number),n=new Date(y,m,0).getDate(),[lv,A]=await Promise.all([api('/api/leaves'),api('/api/attendance/all')]),t=today(),ds=[...Array(n)].map((_,i)=>mo+'-'+String(i+1).padStart(2,'0'));
+const cell=(s,d)=>d>t?'':((A[d]||{})[s.roll]||(lv.some(l=>l.roll==s.roll&&covers(l,d))?'L':'P'));
+const R=filt().map(s=>({s,c:ds.map(d=>cell(s,d))}));window.SH={ds,R};
+$('#main').innerHTML=`<div class="card"><div class="row"><input type="month" value="${mo}" onchange="window.MO=this.value;V.sheet()"><button class="btn sm" onclick="dlSheet()">⬇ Month CSV</button></div>${filterBar()}<p class="mu">Blank = Present (default). <span class="red">L</span> = leave (from leave records), <span class="red">A</span> = absent.</p><div class="tbl"><table class="grid"><tr><th>Room</th><th>Name</th>${ds.map((d,i)=>`<th>${i+1}</th>`).join('')}<th>Leave days</th></tr>${R.map(r=>`<tr><td>${E(r.s.room||'-')}</td><td>${E(r.s.name)}</td>${r.c.map(v=>`<td class="${v=='L'?'cL':v=='A'?'cA':''}">${v=='L'||v=='A'?v:''}</td>`).join('')}<td>${r.c.filter(v=>v=='L').length}</td></tr>`).join('')}</table></div></div>`
+};
+function dlSheet(){const{ds,R}=SH;csv('hostel-sheet-'+ds[0].slice(0,7)+'.csv',[['Room','Name','Roll','Batch','Branch',...ds,'Present','Leave','Absent'],...R.map(r=>[r.s.room,r.s.name,noRoll(r.s)?'':r.s.roll,r.s.batch,r.s.branch,...r.c,...['P','L','A'].map(x=>r.c.filter(v=>v==x).length)])])}

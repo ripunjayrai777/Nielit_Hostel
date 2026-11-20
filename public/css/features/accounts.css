@@ -1,0 +1,3 @@
+/* Accounts (warden approves ID cards) */
+.idpair{display:flex;gap:12px;flex-wrap:wrap}.idpair figure{margin:0;flex:1 1 180px}.idpair figcaption{font-size:12.5px;color:var(--mu);margin-top:4px}.idpair img{width:100%;max-width:320px;border-radius:10px;border:1px solid var(--bd);display:block}
+.tag.x0{background:var(--sel);color:var(--lk)}

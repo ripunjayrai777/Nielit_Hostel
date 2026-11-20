@@ -1,0 +1,7 @@
+/* Today */
+.bar{position:sticky;top:58px;z-index:10;padding:12px 14px}.bar .row{margin:0}
+.list{display:flex;flex-direction:column}.item{display:grid;grid-template-columns:auto 1fr auto;gap:6px 12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--bd)}.item:last-child{border:0}
+.room{min-width:54px;text-align:center;padding:6px;border-radius:8px;background:var(--sel);font:700 13px 'Bricolage Grotesque',sans-serif}.nm{display:flex;align-items:center;gap:8px;min-width:0;font-weight:600}.act{display:flex;gap:8px;align-items:center}
+@media(max-width:560px){.item{grid-template-columns:auto 1fr}.act{grid-column:2}}
+.seg{display:inline-flex;border:1px solid var(--bd);border-radius:10px;overflow:hidden}.seg button{border:0;background:var(--card);color:var(--mu);min-width:44px;min-height:38px;font-weight:800}.seg button+button{border-left:1px solid var(--bd)}
+.seg .P.on{background:var(--okb);color:var(--ok);box-shadow:inset 0 0 0 2px var(--ok)}.seg .L.on{background:var(--wab);color:var(--wa);box-shadow:inset 0 0 0 2px var(--wa)}.seg .A.on{background:var(--nob);color:var(--no);box-shadow:inset 0 0 0 2px var(--no)}
