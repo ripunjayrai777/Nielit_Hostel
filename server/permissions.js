@@ -3,7 +3,7 @@
 //   warden   = Hostel Warden: everything (students, room allotment, attendance, leaves, complaints, fees, exits, accounts, export)
 //   resident = Hostel Resident: only his own data under /api/my (apply leave, raise issues, see status)
 //   guard    = Guard: only the gate view under /api/gate (approved leaves, search a student)
-const RESOURCES = ['students', 'attendance', 'leaves', 'complaints', 'fees', 'exits', 'accounts', 'export', 'gate', 'my', "profile"];
+const RESOURCES = ['students', 'attendance', 'leaves', 'complaints', 'fees', 'exits', 'accounts', 'export', 'gate', 'my', 'profile'];
 const rw = rs => rs.flatMap(r => [r + ':read', r + ':write']);
 
 const ROLES = {
