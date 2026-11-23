@@ -9,7 +9,7 @@ const rw = rs => rs.flatMap(r => [r + ':read', r + ':write']);
 const ROLES = {
   warden:   { label: 'Hostel Warden',   perms: rw(['students', 'attendance', 'leaves', 'complaints', 'fees', 'exits', 'accounts', 'export']) },
   resident: { label: 'Hostel Resident', perms: rw(['my','profile']) },
-  guard:    { label: 'Guard',           perms: ['gate:read'], ...rw(['profile']) }
+  guard:    { label: 'Guard', perms: ['gate:read', ...rw(['profile'])] }
 };
 
 const can = (role, perm) => !!ROLES[role] && ROLES[role].perms.includes(perm);
