@@ -48,10 +48,19 @@ function photoBox(sel, key, face, text) {
 }
 
 // liveBox('#container', 'GLOBALKEY', 'environment'|'user'): camera only, no gallery upload (used for ID card photos)
-function liveBox(sel, key, face) {
+// function liveBox(sel, key, face) {
+//   const host = document.querySelector(sel); if (!host) return; window[key] = '';
+//   if (typeof openCam !== 'function' || !navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) { host.innerHTML = '<p class="red" style="margin:0">This device cannot open the camera. Please use a phone or laptop with a camera.</p>'; return; }
+//   host.innerHTML = '<button type="button" class="btn ghost">Capture ID card photo</button><div class="pv"></div><p class="mu" style="margin:8px 0 0">Hold your ID card in front of the camera. Uploading from the gallery is not allowed.</p>';
+//   const b = host.querySelector('button'), pv = host.querySelector('.pv');
+//   b.onclick = () => openCam(face, d => { window[key] = d; pv.innerHTML = d ? '<img src="' + d + '" alt="ID card photo">' : ''; b.textContent = d ? 'Retake photo' : 'Capture ID card photo'; });
+// }
+
+// liveBox('#container', 'GLOBALKEY', 'environment'|'user', label, hint): camera only, NO gallery upload (ID card photo, profile photo)
+function liveBox(sel, key, face, label = 'Capture ID card photo', hint = 'Hold your ID card in front of the camera. Uploading from the gallery is not allowed.') {
   const host = document.querySelector(sel); if (!host) return; window[key] = '';
   if (typeof openCam !== 'function' || !navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) { host.innerHTML = '<p class="red" style="margin:0">This device cannot open the camera. Please use a phone or laptop with a camera.</p>'; return; }
-  host.innerHTML = '<button type="button" class="btn ghost">Capture ID card photo</button><div class="pv"></div><p class="mu" style="margin:8px 0 0">Hold your ID card in front of the camera. Uploading from the gallery is not allowed.</p>';
+  host.innerHTML = '<button type="button" class="btn ghost">' + label + '</button><div class="pv"></div><p class="mu" style="margin:8px 0 0">' + hint + '</p>';
   const b = host.querySelector('button'), pv = host.querySelector('.pv');
-  b.onclick = () => openCam(face, d => { window[key] = d; pv.innerHTML = d ? '<img src="' + d + '" alt="ID card photo">' : ''; b.textContent = d ? 'Retake photo' : 'Capture ID card photo'; });
+  b.onclick = () => openCam(face, d => { window[key] = d; pv.innerHTML = d ? '<img src="' + d + '" alt="Captured photo">' : ''; b.textContent = d ? 'Retake photo' : label; if (host.onCaptured) host.onCaptured(d); });
 }

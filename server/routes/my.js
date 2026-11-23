@@ -24,6 +24,7 @@ module.exports = (app, { D, h, saveImg }) => {
     if (b.to < b.from) return res.status(400).json({ error: 'To date cannot be before From date' });
     if (b.from < today()) return res.status(400).json({ error: 'Leave cannot start in the past' });
     if (String(b.reason || '').trim().length < 5) return res.status(400).json({ error: 'Please write the reason for leave' });
+    if (!/^data:image\//.test(b.image || '')) return res.status(400).json({ error: 'A photo of your leave application is mandatory' });
     const clash = findClash(await D.leaves.find({ roll: id }).toArray(), b.from, b.to);
     if (clash) return res.status(400).json({ error: 'You already have a leave application from ' + clash.from + ' to ' + (clash.returned ? prevDay(clash.returned) : (clash.to || 'open-ended')) + '. Choose different dates.' });
     await backfill(D, 'leaves', 'LV', 'from');
@@ -44,6 +45,7 @@ module.exports = (app, { D, h, saveImg }) => {
     const b = req.body, id = roll(req), s = await D.students.findOne({ _id: id }), text = String(b.text || '').trim();
     if (!s || s.vacated) return res.status(400).json({ error: 'Your student record is not active' });
     if (text.length < 15) return res.status(400).json({ error: 'Please write your application in detail (at least 15 characters)' });
+    if (!/^data:image\//.test(b.image || '')) return res.status(400).json({ error: 'A photo of your written application is mandatory' });
     await backfill(D, 'complaints', 'CMP', 'date');
     const c = { _id: crypto.randomUUID(), no: await nextNo(D, 'CMP', today()), roll: id, text, date: today(), image: await saveImg(b.image), status: 'Open', note: '', source: 'resident', created: new Date().toISOString() };
     await D.complaints.insertOne(c); res.json({ ok: 1, no: c.no, id: c._id });

@@ -3,7 +3,7 @@ const { hashPw } = require('../lib/password');
 module.exports = (app, { D, h }) => {
   app.get('/api/accounts', h(async (q, r) => {
     const st = Object.fromEntries((await D.students.find().toArray()).map(s => [s._id, s]));
-    r.json((await D.accounts.find().sort({ created: 1 }).toArray()).reverse().map(a => ({ id: a._id, type: a.type, name: a.name, mobile: a.mobile || '', status: a.status, idImage: a.idImage, remark: a.remark || '', created: a.created, decidedAt: a.decidedAt || '', room: (st[a._id] || {}).room || '' })));
+    r.json((await D.accounts.find().sort({ created: 1 }).toArray()).reverse().map(a => ({ id: a._id, type: a.type, name: a.name, mobile: a.mobile || '', status: a.status, idImage: a.idImage, remark: a.remark || '', created: a.created, decidedAt: a.decidedAt || '', room: (st[a._id] || {}).room || '', photo: a.type === 'guard' ? (a.photo || '') : ((st[a._id] || {}).photo || '') })));
   }));
   // numbers for the red badges on the Leave and Accounts tabs
   app.get('/api/accounts/summary', h(async (q, r) => r.json({ accounts: (await D.accounts.find({ status: 'Pending' }).toArray()).length, leaves: (await D.leaves.find({ approval: 'Pending' }).toArray()).length })));

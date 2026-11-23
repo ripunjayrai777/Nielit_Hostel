@@ -4,6 +4,7 @@ const TABS = [
   ['comp', 'Issues', ['warden']], ['fee', 'Fees', ['warden']], ['accounts', 'Accounts', ['warden']], ['data', 'Data', ['warden']],
   ['myhome', 'Home', ['resident']], ['myleave', 'Leave', ['resident']], ['mycomp', 'Issues', ['resident']],
   ['gate', 'Gate', ['guard']],
+  ['profile', 'Profile', ['resident', 'guard']],
   ['about', 'Hostel', ['warden', 'resident', 'guard']]
 ];
 const START = { warden: 'dash', resident: 'myhome', guard: 'gate' };

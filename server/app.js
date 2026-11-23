@@ -28,6 +28,7 @@ require('./routes/fees')(app, ctx);
 require('./routes/accounts')(app, ctx);
 require('./routes/export')(app, ctx);
 require('./routes/my')(app, ctx);
+require('./routes/profile')(app, ctx);
 require('./routes/gate')(app, ctx);
 require('./routes/images')(app, ctx);
 

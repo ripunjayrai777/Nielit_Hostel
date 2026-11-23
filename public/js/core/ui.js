@@ -4,3 +4,4 @@ function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');cl
 const ICONS_EXTRA = { accounts: '<circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-4 3-6 7-6s7 2 7 6"/><path d="M16 11l2 2 4-4"/>', data: '<path d="M12 3v12M7 10l5 5 5-5M4 20h16"/>', gate: '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>', about: '<path d="M4 21V5l8-2 8 2v16"/><path d="M9 21v-5h6v5M8 9h2M14 9h2M8 13h2M14 13h2"/>' };
 Object.assign(ICON, ICONS_EXTRA);
 ICON.myhome = ICON.dash; ICON.myleave = ICON.leave; ICON.mycomp = ICON.comp;
+ICON.profile = ICON.stu;
