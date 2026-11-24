@@ -4,3 +4,6 @@
 .gcard img,.gcard .avt{width:64px;height:64px;border-radius:12px;object-fit:cover;flex:none;background:var(--sel);display:grid;place-items:center;font:800 20px 'Bricolage Grotesque',sans-serif;color:var(--lk)}
 .gcard .gi{flex:1;min-width:0}.gcard .gi b{display:block;font-size:16px}.gcard .gi span{color:var(--mu);font-size:13.5px;display:block}
 .gban{display:inline-block;margin-top:6px;padding:5px 12px;border-radius:8px;font-weight:800;font-size:13.5px}.gban.ok{background:var(--okb);color:var(--ok)}.gban.no{background:var(--nob);color:var(--no)}.gban.wa{background:var(--wab);color:var(--wa)}
+/* Profile pictures: a clear border everywhere (Hostel tab staff, Profile tab, gate cards, small avatars in lists) */
+.pimg,.avt,.me img,.me .avt,.gcard img,.gcard .avt{border:3px solid var(--lk);box-shadow:0 2px 8px #0f3d3e26}
+img.av{border:2px solid var(--lk)}

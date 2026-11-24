@@ -19,7 +19,10 @@
     },
     staff: [
       { title: 'Hostel Warden', name: 'Ritesh Pratap Rao', role: "Sc 'C'", photo: '/assets/warden.jpg', phone: '' },          // photo: public/assets/warden.jpg
-      { title: 'Assistant Hostel Warden', name: 'Neeraj Kumar', role: 'STA', photo: '/assets/asst-warden.jpg', phone: '' }   // photo: public/assets/asst-warden.jpg
+      { title: 'Assistant Hostel Warden', name: 'Neeraj Kumar', role: 'STA', photo: '/assets/asst-warden.jpg', phone: '' },   // photo: public/assets/asst-warden.jpg
+      { title: 'Residence Hostel Warden', name: 'Ripunjay Rai', role: 'RP', photo: '/assets/ripunjay-rai.jpg', phone: '' },
+      { title: 'Residence Hostel Warden', name: 'Prashant Pandey', role: 'RP', photo: '/assets/prashant-pandey.jpg', phone: '' }
+    
     ]
   };
   const q = s => document.querySelector(s);
