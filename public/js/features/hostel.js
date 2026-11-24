@@ -9,12 +9,12 @@
     sop: '/assets/hostel-refund-sop.pdf',   // put the refund SOP in public/assets/hostel-refund-sop.pdf
     menu: '/assets/mess-menu.jpg',          // mess menu image in public/assets/mess-menu.jpg
     menuTitle: 'Mess menu 2026',
-    fees: [{ label: '', amount: 12000 }, { label: '', amount: 15000 }],   // label example: 'Double sharing'
+    fees: [{ label: 'Triple Sharing', amount: 12000 }, { label: 'Transit Room with Triple sharing', amount: 15000 }],   // label example: 'Double sharing'
     messAmount: 3200,
-    contacts: [],                    // example: [{ label: 'Office', value: '0551-xxxxxxx' }]
+    contacts: [{label:'For Any Query', value:'9554613467'}],                    // example: [{ label: 'Office', value: '0551-xxxxxxx' }]
     director: {
       name: 'Dr. Anurag Gupta', role: 'Director-in-Charge', photo: '/assets/director.jpg',   // photo: public/assets/director.jpg
-      draft: true,   // set to false after the Director-in-Charge approves the message below
+      draft: false,   // set to false after the Director-in-Charge approves the message below
       message: 'Welcome to the NIELIT Gorakhpur Boys Hostel. The hostel is a home away from home for our students, and our aim is to give every resident a safe, disciplined and supportive environment in which to learn and grow. I encourage all residents to follow the hostel rules, respect one another and make full use of the opportunities the campus offers.'
     },
     staff: [
