@@ -11,17 +11,17 @@
     menuTitle: 'Mess menu 2026',
     fees: [{ label: 'Triple Sharing', amount: 12000 }, { label: 'Transit Room with Triple sharing', amount: 15000 }],   // label example: 'Double sharing'
     messAmount: 3200,
-    contacts: [{label:'For Any Query', value:'9554613467'}],                    // example: [{ label: 'Office', value: '0551-xxxxxxx' }]
+    contacts: [],                    // example: [{ label: 'Office', value: '0551-xxxxxxx' }]
     director: {
       name: 'Dr. Anurag Gupta', role: 'Director-in-Charge', photo: '/assets/director.jpg',   // photo: public/assets/director.jpg
-      draft: false,   // set to false after the Director-in-Charge approves the message below
+      draft: true,   // set to false after the Director-in-Charge approves the message below
       message: 'Welcome to the NIELIT Gorakhpur Boys Hostel. The hostel is a home away from home for our students, and our aim is to give every resident a safe, disciplined and supportive environment in which to learn and grow. I encourage all residents to follow the hostel rules, respect one another and make full use of the opportunities the campus offers.'
     },
     staff: [
-      { title: 'Hostel Warden', name: 'Ritesh Pratap Rao', role: "Sc 'C'", photo: '/assets/warden.jpg', phone: '' },          // photo: public/assets/warden.jpg
-      { title: 'Assistant Hostel Warden', name: 'Neeraj Kumar', role: 'STA', photo: '/assets/asst-warden.jpg', phone: '' },   // photo: public/assets/asst-warden.jpg
-      { title: 'Residence Hostel Warden', name: 'Ripunjay Rai', role: 'RP', photo: '/assets/ripunjay-rai.jpg', phone: '' },
-      { title: 'Residence Hostel Warden', name: 'Prashant Pandey', role: 'RP', photo: '/assets/prashant-pandey.jpg', phone: '' }
+      { title: 'Hostel Warden', name: 'Ritesh Pratap Rao', role: "Sc 'C'", photo: '/assets/warden.jpg', phone: '8317093893' },          // photo: public/assets/warden.jpg
+      { title: 'Assistant Hostel Warden', name: 'Neeraj Kumar', role: 'STA', photo: '/assets/asst-warden.jpg', phone: '8127019816' },   // photo: public/assets/asst-warden.jpg
+      { title: 'Residence Hostel Warden', name: 'Ripunjay Rai', role: 'RP', photo: '/assets/ripunjay-rai.jpg', phone: '9554613467' },
+      { title: 'Residence Hostel Warden', name: 'Prashant Pandey', role: 'RP', photo: '/assets/prashant-pandey.jpg', phone: '8083488170' }
     
     ]
   };
